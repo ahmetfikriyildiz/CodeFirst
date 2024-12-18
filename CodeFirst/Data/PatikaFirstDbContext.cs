@@ -8,6 +8,8 @@ namespace CodeFirst.Data
         public DbSet<Game> Games { get; set; }
         public DbSet<Movie> Movies { get; set; }
 
+        public PatikaFirstDbContext(DbContextOptions dbContextOptions) : base(dbContextOptions) { }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
