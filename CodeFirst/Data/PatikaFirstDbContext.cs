@@ -20,6 +20,15 @@ namespace CodeFirst.Data
                 entity.Property(e => e.Platform).IsRequired();
                 entity.Property(e => e.Rating).IsRequired();
             });
+
+            modelBuilder.Entity<Movie>(entity =>
+            {
+                entity.ToTable("Movies");
+                entity.HasKey(e => e.Id);
+                entity.Property(e => e.Name).IsRequired();
+                entity.Property(e => e.Genre).IsRequired();
+                entity.Property(e => e.ReleaseYear).IsRequired();
+            });
         }
 
     }
