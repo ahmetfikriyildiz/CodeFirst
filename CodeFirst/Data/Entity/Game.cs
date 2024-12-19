@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
 
 namespace CodeFirst.Data.Entity
 {
@@ -7,10 +8,11 @@ namespace CodeFirst.Data.Entity
         [Key]
         public int Id { get; set; }
         [Required]
-        public string Name { get; set; }
+        public string? Name { get; set; }
         [Required]
         public string Platform { get; set; }
         [Required]
+        [Precision(3,2)]
         public decimal Rating { get; set; }
     }
 }
